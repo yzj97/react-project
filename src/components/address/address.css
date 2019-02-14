@@ -1,0 +1,8 @@
+.address{ width: 90%; border-top: solid 1px #e5e5e5;border-bottom: solid 1px #e5e5e5; background-color: #fff; margin:5% 0; padding: 3% 5%;}
+.address a{ width: 100%; display: block; overflow: hidden;}
+.address dt{ width: 100%;margin-bottom: 2%;  overflow: hidden;}
+.address dt *{ float: left;}
+.address dt p{ font-size: 1.35em; color: #333; margin-right: 3%;}
+.address dt span{ font-size: 1.35em; color: #333; margin-right: 3%;}
+.address dt small{ font-size: 1.169em; color: #fff; background-color: #45c018;padding:0.5% 1%; border-radius: 0.4em;}
+.address dd{ width: 100%; text-align: justify; font-size: 1.169em; color: #666;}
