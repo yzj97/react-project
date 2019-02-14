@@ -1,14 +1,15 @@
 import React,{Component} from 'react';
 import {NavLink} from 'react-router-dom';
+import connect from 'react-redux/es/connect/connect'
+import asyncUser from "../../store/actions/asynUser";
 
 class Login extends Component{
-	constructor(props){
-		  super()
-		  this.state={
+	
+		  state={
 			  username:'',
 			  password:''
 		  }
-	}
+
 	render(){
 		return(
          <div>
@@ -32,7 +33,9 @@ class Login extends Component{
 					<input type="password" placeholder="请输入密码" value={this.state.password} name="password" onChange={(ev)=>this.changeIpt(ev)}/>
 				</li>
 			</ul>
-			<input type="button" defaultValue="登录" onClick={this.login.bind(this)} className='submit'/>
+			<input type="button" defaultValue="登录" onClick={
+				 this.props.login.bind(null,this.state.username,this.state.password,this.props.history)
+				} className='submit'/>
 		</form>
 	</div>
    </div>
@@ -43,31 +46,28 @@ class Login extends Component{
 			[ev.target.name]:ev.target.value
 		})
 	}
-	login(){
-
-	
-		fetch(
-			`/data/user.json`
-		).then(
-			res=>res.json()
-		).then(
-			data=>{
-				data.forEach(item=>{
-					// console.log(item,this.state.username,this.state.password)
-					console.log(this.state.username)
-					console.log(item.data.username)
-
-               if(item.data.username == this.state.username && item.data.password == this.state.password ){
-						this.props.history.push({pathname:'/user'})
-					}else{
-						this.props.history.push({pathname:'/error'})
-					}
-				})
-				
-				
-			}
-		)
-	}
 }
-
-export default Login
+	
+const initMapStateToProps=state=>({
+		// username:state.user.data.username
+});
+const initMapDispatchToProps=dispatch=>({
+	login:(username,password,history)=>dispatch(asyncUser({
+		url:'/data/user.json',
+		username,password
+	})).then(
+		(auth)=>{
+			if(auth){
+				history.push({pathname:'/user'}) 
+			}else{
+                history.push({pathname:'/error'})
+			}
+		}
+	)
+});
+	  
+	  
+export default connect(
+initMapStateToProps,
+initMapDispatchToProps
+)(Login);

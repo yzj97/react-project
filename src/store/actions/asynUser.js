@@ -7,14 +7,14 @@ const asynUser=({url,username,password}) => (dispatch,getState)=>{
      return fetch(
          url,
      ).then(
-         res=>res.json()
+         res=>res.json()                                                                    
      ).then(
          data=>{
             dispatch({type:types.VIEW_LOADING,payload:false});
-            dispatch({type:types.CHECK_USER,payload:data})
-            return data.auth
+            dispatch({type:types.CHECK_USER,payload:{data,username,password}})
+            return true
+        });
+           
          }
-     )
-}
 
 export default asynUser;

@@ -3,4 +3,9 @@
   "data":{"username":"alex","password":"alex123"},
   "time":10000,
   "startTime":0
+},{
+  "auth":true,
+  "data":{"username":"jian","password":"jian"},
+  "time":10000,
+  "startTime":0
 }]

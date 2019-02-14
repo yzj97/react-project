@@ -1,12 +1,19 @@
-import React from 'react';
+import React,{Component} from 'react';
 import {Link} from 'react-router-dom'
+import connect from 'react-redux/es/connect/connect';
+import * as types from '../../store/types';
 
-const User = (props) => (
-   <div>
+class User extends Component {
+   componentDidMount(){
+	   console.log(this.props)
+   }
+	render(){
+		return(
+<div>
       <header className="self-header">
 		<figure><img src="./images/self-tou.png"/></figure>
 		<dl>
-			<dt>{props.data.username}</dt>
+			<dt>{this.props.username}</dt>
 			<dd>
 				<img src="./images/self-header.png"/>
 				<span>5684</span>
@@ -103,13 +110,30 @@ const User = (props) => (
 				</li>
 				
 			</ul>
-			<Link to={"/login"}><input type="button" value="退出" /></Link>
+			<Link to={"/login"}><input type="button" value="退出" onClick={
+				this.props.logout.bind({auth:false})
+			}/></Link>
 			
 		</section>
 		
 		
 	</div>
    </div>
-);
+		)
+	}
+}
 
-export default User
+const initMapStateToProps = state =>({
+	username:state.user.data.username
+})
+
+const initMapDispatchToProps=dispatch=>({
+     logout:(bl)=>{
+		dispatch({type:types.CHECK_USER,payload:bl})
+	 }
+})
+
+export default connect(
+	initMapStateToProps,
+	initMapDispatchToProps
+)(User)
