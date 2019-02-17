@@ -22,7 +22,7 @@ body{background-color: #f2f2f2;}
 .login form input.submit{ width: 94%; margin: 5% 3%; padding: 4% 0;background-color: #FC605A;color: #fff; font-size: 1.7em; border-radius: 0.3em; border: none;text-align: center;}
 /*首页*/
 /*红色顶部*/
-.page-header{ width: 100%; background-color: #FC605A; overflow: hidden;position: fixed;top:0;left:0;}
+.page-header{ width: 100%; background-color: #FC605A; overflow: hidden;position: fixed;top:0;left:0;z-index: 100;}
 .page-header h3{position: relative; font-size: 1.9em;  color: #fff; font-weight: normal; text-align: center;  padding: 0.7em 0;}
 .page-header input{ width: 60%; border: none; border-radius: 3em; margin: 2% 5%; padding: 1.5% 7.5%; font-size: 1.7em; float: left; }
 .page-header span{ width: 15%;  display: inline-block;margin: 3% 0; float: right;}
@@ -69,22 +69,22 @@ body{background-color: #f2f2f2;}
 /*购物车*/
 .contaniner .shopcar{ width: 100%; margin: 2% 0; padding: 4% 0; box-shadow: 0 2px 2px #d7d7d7; background-color: #fff;overflow: hidden;padding-top: 56px;}
 
-.contaniner .shopcar .shopcar-checkbox{position: relative; float: left; width:10%; height: 3em; padding: 10% 0;}
+
 .contaniner .shopcar input[type="checkbox"]{ position: absolute; top: 0; left: 0; opacity: 0; }
 .contaniner .shopcar .shopcar-checkbox label{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(../images/check.png) no-repeat; background-size: 60%; background-position: 50% ; -moz-user-select: none; }
 .contaniner .shopcar .shopcar-checkbox .shopcar-checkd{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(../images/checke.png) no-repeat; background-size: 60%; background-position: 50% ;  }
 
-.contaniner .shopcar figure{ width: 30%; height: 10em; overflow: hidden; float: left;}
+/* .contaniner .shopcar figure{ width: 30%; height: 10em; overflow: hidden; float: left;}
 .contaniner .shopcar figure img{ width: 100%; min-height: 100%; }
 .contaniner .shopcar dl{ position: relative; float: left; width: 54%; height: 10em;   margin: 0 3%; overflow: hidden;}
 .contaniner .shopcar dl dt{ font-size: 1.3815em; color: #333;}
 .contaniner .shopcar dl dd{ font-size: 1.169em; color: #999;}
 .contaniner .shopcar dl .add{position: absolute; bottom: 0; left: 0; width: 46%; overflow: hidden; display: table; }
-.contaniner .shopcar dl .add span{border: solid 1px #c8c8c8; padding: 1% 10%; display:table-cell;}
+.contaniner .shopcar dl .add span{border: solid 1px #c8c8c8; padding: 1%; display:table-cell;}
 .contaniner .shopcar dl .add input{border: solid 1px #c8c8c8; width:100%;margin-left: -1px; display:table-cell;font-size:1.25em ; padding: 10% 0; color: #666; text-align: center;}
 .contaniner .shopcar dl h3{ position: absolute; right: 3%; bottom: 20%; font-size: 1.9em; color: #fc605a; font-weight: normal;}
 .contaniner .shopcar dl small{ position: absolute; right: 3%; bottom: 0; display: block; width: 10%;}
-.contaniner .shopcar dl small img{width: 100%;}
+.contaniner .shopcar dl small img{width: 100%;} */
 
 
 

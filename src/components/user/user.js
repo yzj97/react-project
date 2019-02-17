@@ -4,9 +4,6 @@ import connect from 'react-redux/es/connect/connect';
 import * as types from '../../store/types';
 
 class User extends Component {
-   componentDidMount(){
-	   console.log(this.props)
-   }
 	render(){
 		return(
 <div>

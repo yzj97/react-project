@@ -1,8 +1,8 @@
 .swipe-image{
-    width: 375px;
-    height:375px;
+    width: 100%;
+    height:40%;
 }
 .swipe-image img{
-    width: 375px;
-    height:375px;
+    width: 100%;
+    height:40%;
 }

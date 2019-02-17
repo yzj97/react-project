@@ -7,5 +7,16 @@ export default {
     detaillist:[],
     user:{
         auth:false,
-    }
+    },
+    buycar:[
+        {
+        id:1,
+        title:'韩版青少年休闲修身长袖紧身衬衫',
+        url:'/images/list-ph01.png',
+        number:1,
+        price:'￥58',
+        color:'经典绮丽款',
+        size:'L'
+       }
+    ]
 }

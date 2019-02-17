@@ -29,7 +29,7 @@ const Reg = (props) => (
 					<input type="password" placeholder="请确认密码"/>
 				</li>
 			</ul>
-			<input type="submit" value="立即注册"/>
+			<input  type="button" value="立即注册" className='submit'/>
 		</form>
 	</div>
    </div>

@@ -2,11 +2,11 @@ import React ,{Component}from 'react';
 import {Route,Redirect} from 'react-router-dom';
 import connect from "react-redux/es/connect/connect";
 
-const Auth = ({ component: Component,auth, ...rest }) => (
+const Authcar = ({ component: Component,auth, ...rest }) => (
   <Route {...rest} render={props =>
     auth ?
       <Component {...props} />
-      : <Redirect to="/login" />
+      : <Redirect to="/tologin" />
   }
   />
 );
@@ -22,4 +22,4 @@ const initMapDispatchToProps=dispatch=>({
 export default connect(
   initMapStateToProps,
   initMapDispatchToProps
-)(Auth);
+)(Authcar);

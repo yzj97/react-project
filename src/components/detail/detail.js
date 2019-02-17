@@ -174,7 +174,9 @@ class Detail extends Component{
 	
 		<footer className="detail-footer fixed-footer">
 			<a href="javascript:;" className="go-car">
-				<input type="button" value="加入购物车"/>
+				<input type="button" value="加入购物车" onClick={
+				 this.props.add.bind(null,detail)
+			}/>
 			</a>
 			<NavLink to={'/buy'} className="buy">
 				立即购买
@@ -182,7 +184,7 @@ class Detail extends Component{
 		</footer>
     </>
         )
-    }
+		}
 }
 
 const initMapStateToProps=state=>({
@@ -196,7 +198,15 @@ const initMapStateToProps=state=>({
 			url:`/data/product.data`,
 		}))
 	 },
-  });
+	 add:(obj)=>{
+      dispatch({
+				type:types.ADD_ITEM,
+				payload:obj
+			})
+	 }
+    
+	 } 
+  );
   
   
   export default connect(
